@@ -1,5 +1,5 @@
 const tutorials = [
-  'what does the this keyword mean?',
+  'what does the this Keyword Mean?',
   'What is the Constructor OO pattern?',
   'implementing Blockchain Web API',
   'The Test Driven Development Workflow',
@@ -11,6 +11,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+function toTitleCase(string) {
+  return string.split(' ').map(word => capitalizeFirstLetter(word)).join(' ');
+}
+
+function titleCased() {
+  return tutorials.map(tutorial => toTitleCase(tutorial));
+}
+
+
+
+module.exports = titleCased;
